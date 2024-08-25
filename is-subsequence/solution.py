@@ -1,4 +1,3 @@
-from typing import List
 
 
 # we are looking if a sequence of chars (as a string) s appears inside another string t in the same order
