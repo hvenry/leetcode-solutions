@@ -7,11 +7,11 @@ class TestSolution(unittest.TestCase):
         self.solution = Solution()
 
     def test(self):
-        word1 = "abc"
-        word2 = "pqrs"
+        s = "abc"
+        t = "ahbgdc"
 
-        res = self.solution.mergeAlternately(word1, word2)
-        self.assertEqual(res, "apbqcrs")
+        res = self.solution.isSubsequence(s, t)
+        self.assertEqual(res, True)
 
 
 if __name__ == "__main__":
