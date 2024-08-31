@@ -1,6 +1,7 @@
 import unittest
 from solution import Solution
 
+
 class TestSolution(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
@@ -16,6 +17,7 @@ class TestSolution(unittest.TestCase):
         nums2 = []
         self.solution.merge(nums1, 1, nums2, 0)
         self.assertEqual(nums1, [1])
+
 
 if __name__ == "__main__":
     unittest.main()

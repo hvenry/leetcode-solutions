@@ -1,6 +1,6 @@
 from typing import List
 
-'''
+"""
 nums = [2, 7, 11, 15]
 target = 9
 
@@ -30,19 +30,20 @@ matching IS in hashmap ( { 2 : 0 } )
 we now return [ 0 (comes from hashmap[matching] or hashmap[2]), 1 (comes from i)]
 
 res = [0, 1]
-'''
+"""
+
 
 class Solution:
-  def twoSum(self, nums: List[int], target: int) -> List[int]:
-    hashmap = {}
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashmap = {}
 
-    for i in range(len(nums)):
-      matching = target - nums[i]
-      # O(1) lookup time in hashmap
-      if matching in hashmap:
-        return [hashmap [matching], i]
-      hashmap[nums[i]] = i
-    return []
-  
-  # time: O(n)
-  # space: O(n)
+        for i in range(len(nums)):
+            matching = target - nums[i]
+            # O(1) lookup time in hashmap
+            if matching in hashmap:
+                return [hashmap[matching], i]
+            hashmap[nums[i]] = i
+        return []
+
+    # time: O(n)
+    # space: O(n)

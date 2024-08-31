@@ -1,5 +1,6 @@
 from typing import List
 
+
 # time: O(n^2)
 # space: O(1)
 class Solution:
@@ -17,7 +18,10 @@ class Solution:
             # swap only one half of the matrix
             for col in range(n // 2):
                 # j is left pointer going right and n - j - 1 is right pointer going left
-                matrix[row][col], matrix[row][n - col - 1] = matrix[row][n - col - 1], matrix[row][col]
+                matrix[row][col], matrix[row][n - col - 1] = (
+                    matrix[row][n - col - 1],
+                    matrix[row][col],
+                )
 
         # fancy reverse of rows in matrix
 

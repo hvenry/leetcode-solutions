@@ -1,5 +1,3 @@
-
-
 # we are looking if a sequence of chars (as a string) s appears inside another string t in the same order
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
