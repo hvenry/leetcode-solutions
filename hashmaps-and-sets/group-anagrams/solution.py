@@ -1,7 +1,7 @@
 from typing import List
 from collections import defaultdict
 
-'''
+"""
 given an array of strings, strs, group the anagrams together.
 
 return the answer in any order.
@@ -45,7 +45,8 @@ the overall time complexity is O (m * n * 26)
 m is strengths
 n is average length of str
 26 is length of count array.
-'''
+"""
+
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
@@ -58,12 +59,8 @@ class Solution:
             for char in str:
                 # take ascii value (a - a = 0, b - a = 1)
                 count[ord(char) - ord("a")] += 1
-            
+
             # lists can not be keys, so we change it to a tuple
             res[tuple(count)].append(str)
 
         return res.values()
-
-
-
-
