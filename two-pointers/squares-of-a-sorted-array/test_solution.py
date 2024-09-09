@@ -7,12 +7,10 @@ class TestSolution(unittest.TestCase):
         self.solution = Solution()
 
     def test(self):
-        ransomNote = "aa"
-        magazine = "aab"
+        nums = [-4, -1, 0, 3, 10]
+        ans = [0, 1, 9, 16, 100]
 
-        ans = True
-
-        res = self.solution.canConstruct(ransomNote, magazine)
+        res = self.solution.sortedSquares(nums)
         self.assertEqual(res, ans)
 
 
