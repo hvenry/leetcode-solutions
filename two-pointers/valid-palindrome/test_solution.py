@@ -7,11 +7,11 @@ class TestSolution(unittest.TestCase):
         self.solution = Solution()
 
     def test(self):
-        s = ["h", "e", "l", "l", "o"]
-        ans = ["o", "l", "l", "e", "h"]
+        s = "A man, a plan, a canal: Panama"
+        ans = True
 
-        self.solution.reverseString(s)
-        self.assertEqual(s, ans)
+        res = self.solution.isPalindrome(s)
+        self.assertEqual(res, ans)
 
 
 if __name__ == "__main__":
