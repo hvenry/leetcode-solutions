@@ -1,6 +1,7 @@
 import unittest
 from solution import Solution
 
+
 class TestSolution(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
@@ -10,6 +11,7 @@ class TestSolution(unittest.TestCase):
         res = 2
         ans = self.solution.majorityElement(nums)
         self.assertEqual(ans, res)
+
 
 if __name__ == "__main__":
     unittest.main()

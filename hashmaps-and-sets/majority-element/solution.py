@@ -1,6 +1,6 @@
 from typing import List
 
-'''
+"""
 given an array nums of size n, return the majority element.
 
 the majority element is the element that appears more than [n/2] times
@@ -14,9 +14,9 @@ solution:
 use a dict as a counter
 for each number, if it does not exist, add it to dict, and increment the counter
 if the number already exists, just increment the counter.
-'''
+"""
 
-'''
+"""
 solution 1:
 
 time O(n)
@@ -34,9 +34,9 @@ class Solution:
             counter[num] += 1
         
         return max(counter)
-'''
+"""
 
-'''
+"""
 solution 2:
 
 time O(n)
@@ -51,7 +51,8 @@ traverse through list
 - if count is 0, set candidate to current number and set count to 1
 - if the current number is same as candidate, increment count
 - if current number is less than candidate, decrement count
-'''    
+"""
+
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
@@ -68,4 +69,3 @@ class Solution:
                 count -= 1
 
         return candidate
-            

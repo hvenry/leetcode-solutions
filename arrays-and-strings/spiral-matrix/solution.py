@@ -1,6 +1,6 @@
 from typing import List
 
-'''
+"""
 given an n * m matrix, return all of the elements of the matrix in spiral order
 
 i think:
@@ -27,7 +27,8 @@ solution:
 repeat appending top row, right column, bottom row, left column
 while adding -1 to each length, creating a spiral output of all
 of the items in the matrix.
-'''
+"""
+
 
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
@@ -61,5 +62,5 @@ class Solution:
                 for i in range(bottom, top - 1, -1):
                     result.append(matrix[i][left])
                 left += 1
-            
+
         return result
