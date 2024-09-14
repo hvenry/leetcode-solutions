@@ -1,6 +1,6 @@
 from typing import List
 
-'''
+"""
 given n non-negative integers representing an elevation map where the width
 of each bar is 1, compute how much water it can trap after raining.
 
@@ -37,13 +37,14 @@ return result
 
 key understanding
 - why max - height max is equal to the water that can be stored
-'''
+"""
 
 
 class Solution:
     def trap(self, height: List[int]) -> int:
         # edge case
-        if not height: return 0
+        if not height:
+            return 0
 
         left = 0
         right = len(height) - 1
@@ -59,10 +60,9 @@ class Solution:
                 left_max = max(left_max, height[left])
                 # this can't be negative because the max is always going to be 0 or more
                 res += left_max - height[left]
-            else: 
+            else:
                 right -= 1
                 right_max = max(right_max, height[right])
                 res += right_max - height[right]
-            
+
         return res
-            
