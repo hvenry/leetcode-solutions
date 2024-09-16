@@ -1,6 +1,6 @@
 from typing import List
 
-'''
+"""
 You are keeping scores for a baseball game with strange rules.
 
 At the beginning of the game, you start wth an empty record.
@@ -30,7 +30,8 @@ return the sum of this record after operations: [5, 10, 15] = 30
 
 solution:
 use stack to track score, since we are only foc
-'''
+"""
+
 
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
@@ -45,6 +46,5 @@ class Solution:
                 stack.pop()
             else:
                 stack.append(int(operation))
-        
+
         return sum(stack)
-        

@@ -7,11 +7,11 @@ class testSolution(unittest.TestCase):
         self.solution = Solution()
 
     def test(self):
-        operations = ["5", "2", "C", "D", "+"]
-        ans = 30
+        s = "()[]{}"
+        ans = True
 
-        res = self.solution.calPoints(operations)
-        self.assertEqual(res, ans)
+        res = self.solution.isValid(s)
+        self.assertEqual(ans, res)
 
 
 if __name__ == "__main__":
