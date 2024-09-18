@@ -1,7 +1,7 @@
 from typing import List
 
 
-'''
+"""
 given an array fo integers 'nums' which is sorted in ascending order, and
 an integer 'target', write a function to search 'target' in 'nums'.
 
@@ -13,7 +13,8 @@ to implement this with O (log n) time complexity, use binary search.
 how to implement
 - if target is smaller than mid, search lef
 - if target is larger than mid, search right
-'''
+"""
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
@@ -34,4 +35,3 @@ class Solution:
                 left = middle + 1
 
         return -1
-
