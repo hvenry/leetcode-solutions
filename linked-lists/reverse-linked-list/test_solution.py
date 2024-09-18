@@ -2,6 +2,7 @@ import unittest
 from solution import Solution
 from solution import Solution, ListNode
 
+
 class TestSolution(unittest.TestCase):
     def list_to_linkedlist(self, elements):
         head = ListNode(elements[0])
@@ -42,5 +43,6 @@ class TestSolution(unittest.TestCase):
         reversed_head = sol.reverseList(head)
         self.assertEqual(self.linkedlist_to_list(reversed_head), [2, 1])
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

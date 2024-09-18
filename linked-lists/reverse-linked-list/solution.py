@@ -1,6 +1,6 @@
 from typing import Optional
 
-'''
+"""
 given the head of a singly linked list, reverse the list, and return the reversed list.
 
 how to reverse a linked list:
@@ -18,7 +18,8 @@ that is a reversed list!
 
 Time O(n)
 Space O(1)
-'''
+"""
+
 
 # Definition for singly-linked list
 class ListNode:
@@ -39,4 +40,3 @@ class Solution:
             curr = temp
 
         return prev
-
