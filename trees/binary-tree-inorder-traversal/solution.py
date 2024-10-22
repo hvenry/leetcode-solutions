@@ -52,3 +52,25 @@ class Solution:
 
         inorder(root)
         return res
+
+    # iterative approach to this solution
+    # we can simulate the recursive callstack with a stack
+    def itarativeInorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []
+        stack = []
+        cur = root
+
+        # start with current being the root
+        while cur or stack:
+            # traverse left as far as possible
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            # once we are as far left, pop the top value of the stack
+            cur = stack.pop()
+            # add the value of this node
+            res.append(cur.val)
+            # go to the right node
+            cur = cur.right
+
+        return res
