@@ -3,19 +3,21 @@ from typing import Optional
 """
 given the head of a singly linked list, reverse the list, and return the reversed list.
 
-how to reverse a linked list:
+Solution:
+How to reverse a linked list (reverse pointers)
 
-two solutions:
-iteratively:
-- use two pointers
-- go through the list, and swap the links
-
-ie
 1 --> 2 --> 3 
 turns into
 1 <-- 2  <-- 3
 that is a reversed list!
 
+- Use three pointer: curr, prev and next
+- traverse all nodes of linked list (from current)
+- store next node
+- reverse current nodes pointer (point current.next to prev)
+- move both pointers PREVIOUS and CURRENT to the next posision
+
+Complexity:
 Time O(n)
 Space O(1)
 """
@@ -34,9 +36,14 @@ class Solution:
         curr = head
 
         while curr:
-            temp = curr.next
+            # store next node
+            next_node = curr.next
+
+            # reverse current nodes pointer
             curr.next = prev
+
+            # move both pointers one position ahead
             prev = curr
-            curr = temp
+            curr = next_node
 
         return prev
