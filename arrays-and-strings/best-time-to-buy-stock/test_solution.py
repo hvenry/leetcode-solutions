@@ -1,6 +1,7 @@
 import unittest
 from solution import Solution
 
+
 class TestSolution(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
@@ -25,5 +26,6 @@ class TestSolution(unittest.TestCase):
         prices = [2, 4, 1]
         self.assertEqual(self.solution.maxProfit(prices), 2)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
