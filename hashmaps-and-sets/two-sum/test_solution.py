@@ -1,6 +1,7 @@
 import unittest
 from solution import Solution
 
+
 class TestTwoSum(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
@@ -15,7 +16,9 @@ class TestTwoSum(unittest.TestCase):
         self.assertEqual(self.solution.twoSum([1, 2, 3, 4, 5], 6), [1, 3])
 
     def test_case_with_large_numbers(self):
-        self.assertEqual(self.solution.twoSum([1000000, 500000, -1500000], -1000000), [1, 2])
+        self.assertEqual(
+            self.solution.twoSum([1000000, 500000, -1500000], -1000000), [1, 2]
+        )
 
     def test_case_with_duplicates(self):
         self.assertEqual(self.solution.twoSum([3, 3], 6), [0, 1])
@@ -23,5 +26,6 @@ class TestTwoSum(unittest.TestCase):
     def test_case_with_no_solution(self):
         self.assertEqual(self.solution.twoSum([1, 2, 3], 7), [])
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
