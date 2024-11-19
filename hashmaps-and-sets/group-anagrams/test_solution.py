@@ -2,18 +2,27 @@ import unittest
 from solution import Solution
 
 
-class TestSolution(unittest.TestCase):
+class TestGroupAnagrams(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
 
-    def test(self):
-        strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
-        ans = [["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
+    def test_single_character_strings(self):
+        strs = ["a", "b", "c"]
+        expected = [["a"], ["b"], ["c"]]
+        result = self.solution.groupAnagrams(strs)
+        self.assertCountEqual(result, expected)
 
-        res = self.solution.groupAnagrams(strs)
-        res = [sorted(x) for x in res]
-        ans = [sorted(x) for x in ans]
-        self.assertListEqual(sorted(res), sorted(ans))
+    def test_multiple_anagrams(self):
+        strs = ["abc", "bca", "cab", "xyz", "zyx", "yxz"]
+        expected = [["abc", "bca", "cab"], ["xyz", "zyx", "yxz"]]
+        result = self.solution.groupAnagrams(strs)
+        self.assertCountEqual(result, expected)
+
+    def test_no_anagrams(self):
+        strs = ["abc", "def", "ghi"]
+        expected = [["abc"], ["def"], ["ghi"]]
+        result = self.solution.groupAnagrams(strs)
+        self.assertCountEqual(result, expected)
 
 
 if __name__ == "__main__":
