@@ -1,29 +1,34 @@
-from typing import List
-
 """
+Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence.
+
+The algorithm must run in O(n) time.
+
+Example 1:
 nums = [100, 4, 200, 1, 3, 2]
-output: 4
+returns: 4
 
-because longest consecutive is [1, 2, 3, 4]
+The result is 4 because longest consecutive is [1, 2, 3, 4].
 
-we could sort and this would be easy to solve by just
-seeing what is n+1, but this would be O(nlogn) because
-we need to sort.
 
-each sequence has as start value, which has no left neighbor
+Naive Approach: Sorting
+- we could sort and then iterate through sorted array keeping trak of a streak and max streak
+- this has O(n log n) time complexity though because we need to sort
 
-we can find what the start values are by finding the number
-that does not have a left neighbor
-
-solution:
-- iterate through original array
-- use a set
+Optimal Solution: Hash Set
+- Store values of nums into a set, then iterate through the values of the set
+- keep track of a longest
 - check if values have left neighbors
-- if they dont, then they are the start of the sequence
+    - if they dont, then they are the start of the sequence, start length at 1
+    - while the number + length is in the current set, keep increasing lenght by 1 until this is fales
+    - set longest to max(length, longest)
+- return longest
 
-Time O(n)
-Space O(n)
+Complexity:
+- Time: O(n) -> iterate through nums
+- Space O(n) -> store nums
 """
+
+from typing import List
 
 
 class Solution:
