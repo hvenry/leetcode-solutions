@@ -2,16 +2,21 @@ import unittest
 from solution import Solution
 
 
-class testSolution(unittest.TestCase):
+class TestValidParentheses(unittest.TestCase):
     def setUp(self):
         self.solution = Solution()
 
-    def test(self):
-        s = "()[]{}"
-        ans = True
+    def test_valid_parentheses(self):
+        self.assertTrue(self.solution.isValid("()[]{}"))
+        self.assertTrue(self.solution.isValid("()"))
+        self.assertTrue(self.solution.isValid("{[]}"))
+        self.assertTrue(self.solution.isValid(""))
 
-        res = self.solution.isValid(s)
-        self.assertEqual(ans, res)
+    def test_invalid_parentheses(self):
+        self.assertFalse(self.solution.isValid("(]"))
+        self.assertFalse(self.solution.isValid("([)]"))
+        self.assertFalse(self.solution.isValid("((("))
+        self.assertFalse(self.solution.isValid("]"))
 
 
 if __name__ == "__main__":
