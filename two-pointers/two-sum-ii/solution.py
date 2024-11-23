@@ -52,7 +52,7 @@ class Solution:
 
             if sum == target:
                 return [left + 1, right + 1]
-            if sum < target:
+            elif sum < target:
                 left += 1
             else:
                 right -= 1
