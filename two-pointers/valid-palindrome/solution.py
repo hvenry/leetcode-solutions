@@ -1,10 +1,24 @@
 """
-given a string s, return True if it is a palindrome, or False otherwise
+A prhase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all
+non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include the letters
+and numbers.
 
-tips
-- use .isalnum() to see if left or right pointer char is not a number
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+Example:
+s = "A man, a pln, a canal: Panama"
+returns: True
+
+"amanaplaneacanalpanama" is a palindrome.
+
+Solution:
 - use two pointers to check left and right side of string to see if palindrome
+- use .isalnum() to see if left or right pointer char is not a number
 - continue until loop finishes, if it does and no left or right char is different, return True
+
+Complexity
+- Time: O(n)
+- Space: O(1)
 """
 
 
