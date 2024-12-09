@@ -29,34 +29,58 @@ from typing import List
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        rows = len(matrix)
-        cols = len(matrix[0])
-        top = 0
-        bottom = rows - 1
+        # One pass solution (flatten array), treat as 1D search space and calculate 2D indicies
+        m = len(matrix)
+        n = len(matrix[0])
 
-        # look for target row (or target row does not exist)
-        while top <= bottom:
-            row = (top + bottom) // 2
-            if target > matrix[row][-1]:
-                top = row + 1
-            elif target < matrix[row][0]:
-                bottom = row - 1
-            else:
-                break
-
-        if not (top <= bottom):
-            return False
-
-        row = (top + bottom) // 2
         left = 0
-        right = cols - 1
+        right = m * n - 1
 
         while left <= right:
-            middle = (left + right) // 2
-            if target > matrix[row][middle]:
-                left = middle + 1
-            elif target < matrix[row][middle]:
-                right = middle - 1
-            else:
+            mid = (left + right) // 2
+
+            # row index
+            i = mid // n
+            # column index
+            j = mid % n
+
+            if target == matrix[i][j]:
                 return True
+            elif target > matrix[i][j]:
+                left = mid + 1
+            else:
+                right = mid - 1
+
         return False
+
+        # rows = len(matrix)
+        # cols = len(matrix[0])
+        # top = 0
+        # bottom = rows - 1
+        #
+        # # look for target row (or target row does not exist)
+        # while top <= bottom:
+        #     row = (top + bottom) // 2
+        #     if target > matrix[row][-1]:
+        #         top = row + 1
+        #     elif target < matrix[row][0]:
+        #         bottom = row - 1
+        #     else:
+        #         break
+        #
+        # if not (top <= bottom):
+        #     return False
+        #
+        # row = (top + bottom) // 2
+        # left = 0
+        # right = cols - 1
+        #
+        # while left <= right:
+        #     middle = (left + right) // 2
+        #     if target > matrix[row][middle]:
+        #         left = middle + 1
+        #     elif target < matrix[row][middle]:
+        #         right = middle - 1
+        #     else:
+        #         return True
+        # return False
